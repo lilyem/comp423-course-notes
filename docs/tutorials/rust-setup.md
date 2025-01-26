@@ -5,7 +5,7 @@
 
 ## Objectives
 
-In this tutorial, you will learn how to set up a project from scratch in the Rust Programming language! By the conclusion, you will have created a project that prints "Hello COMP423."
+In this tutorial, you will learn how to set up a project from scratch in the Rust Programming language! By the conclusion, you will have set up a Development container (and learn about why these are important!) and created a project that prints "Hello COMP423" in Rust.
 
 ## Prerequisites
 
@@ -113,20 +113,35 @@ In this file put the following:
 ```
 Step 2. Reopen the Project in a VSCode Dev Container
 
-Reopen the project in the container by pressing `Ctrl+Shift+P` or if you are on a Mac `Cmd+Shift+P`, then type "Dev Containers: Reopen in COntainer" and select that option. This may take a few minutes to install and dowload everything. Once this completes, you can close the current terminal tab.
+Reopen the project in the container by pressing `Ctrl+Shift+P` or if you are on a Mac `Cmd+Shift+P`, then type "Dev Containers: Reopen in Container" and select that option. This may take a few minutes to install and dowload everything. Once this completes, you can close the current terminal tab.
 
 Step 3. Open a new terminal tab in VSCode and try running `rustc --version` to see your dev container is running a recent version of rust!
 
 ## Part 3. Creating a new Rust Project
 
-1) Use the `cargo new` command to create a binary project:
+[Rust](https://www.rust-lang.org/learn) is the programming language we have installed through the dev container we just set up, and what language we will be writing our "Hello COMP43" in. In Rust, a *crate* is an executable program. Rather than simply complining our crates usinf the Rust compiler, `rustc`, we will be using [Cargo](https://doc.rust-lang.org/cargo/guide/creating-a-new-project.html) in this tutprial. Cargo is the package manager for Rust and does the following:
+
+* Runs `rustc`
+
+* Creates two metadata files
+
+* Builds and fetches your package's depentencies
+
+* Simplifies workong with Rust packes via normalizing commands
+
+1) Use the `cargo new` command to start a new package with Cargo, and specify that we want to create a binary project. This will automatically make a new git repo which we do not want to do here, so use the `--vsc none` flag. Open the terminal in your VSCode dev container you just set up and run the following:
 ``` shell
 cargo new hello_comp423 --bin --vcs none 
-cd hello-comp423
+cd hello_comp423
 ```
 
 !!! info ""
     The `--vsc none` flag does not create a new `git` repository automatically on your behalf. The `--bin` flag means that we are making a binary program.
+
+You should now see a `hello_comp423` directory. Click on this to see the files that the `cargo new` command created.
+
+!!! note "Cargo.toml"
+    The `Cargo.toml` file is called a manifest and it contains data written in TOML format that Cargo uses to compile your package.
 
 2) Now, open `src/main.rs`, and modify its contents to be:
 
@@ -136,7 +151,7 @@ fn main() {
 }
 ```
 
-3) To complile and run the program, you can do one of two things.
+3) To complile and run the program, you can do one of two things: use `cargo build` to compile your program, and and then run your program using its file path, or simply use `cargo run` to both complie and run your program with one command.
 
 * Compile and run in two steps:
 
@@ -150,5 +165,18 @@ cargo build
 
 * Use `cargo run` to compile and run in one step.
 
+You should try compliling and running your program with both of these methods for practice. Notice that both produce the same output:
+```
+   Compiling hello_comp423 v0.1.0 (/workspaces/comp423-rust-tutorial/hello_comp423)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.32s
+Hello COMP423
+```
 
-## Now that you have set up your dev container and written a "Hello COMP423", you should commit and push your work to GitHub!
+Now that you have set up your dev container and written a "Hello COMP423", you should stage, commit, and push your work to GitHub! Remeber to use `git push origin main` when pushing your changes.
+
+To learn more about [Rust](https://www.rust-lang.org/learn) and [Cargo](https://doc.rust-lang.org/cargo/guide/creating-a-new-project.html), check out their documentation linked here!
+
+
+#### References
+
+[1] K. Jordan, “Starting a static website project with MkDocs,” COMP423, [https://comp423-25s.github.io/resources/MkDocs/tutorial/#step-2-add-requirementstxt-python-dependency-configuration](https://comp423-25s.github.io/resources/MkDocs/tutorial/#step-2-add-requirementstxt-python-dependency-configuration) (accessed Jan. 25, 2025). 
