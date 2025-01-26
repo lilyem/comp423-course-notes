@@ -5,7 +5,7 @@
 
 ## Objectives
 
-In this tutorial, you will learn how to set up a project from scratch in the Rust Programming language! By the conclusion, you will have set up a Development container (and learn about why these are important!) and created a project that prints "Hello COMP423" in Rust.
+In this tutorial, you will learn how to set up a Dev Container that installs Rust, then write a simple program in the Rust Programming language! By the conclusion, you will have set up a Development container (and learn about why these are important!) and created a project that prints "Hello COMP423" in Rust.
 
 ## Prerequisites
 
@@ -93,10 +93,10 @@ git push --set-upstream origin main # (1)!
 
 2) Install the Dev container extension for VS Code.
 
-3) Create a `.devcontainer` directory in the root of your project with the file `.devcontainer/devcontainer.json` inside of this "hidden" configuration directory.
+3) Specify configuration for a standardized development environment using a Docker image. To do this, create a `.devcontainer` directory in the root of your project with the file `.devcontainer/devcontainer.json` inside of this "hidden" configuration directory.
 
 !!! Tip ""
-    This file defines the configuration for your development environment. It will specify the name, image, and customizations for your dev container.
+    This file defines the configuration for your development environment. It will specify the name, image, and customizations for your dev container. The name should descripe your dev container. The image we will use is the base immage Microsoft maintains for Rust. The extension we will install is the official rust-analyzer VSCode plugin.
 
 In this file put the following:
 ``` json
