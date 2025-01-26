@@ -119,3 +119,36 @@ Step 3. Open a new terminal tab in VSCode and try running `rustc --version` to s
 
 ## Part 3. Creating a new Rust Project
 
+1) Use the `cargo new` command to create a binary project:
+``` shell
+cargo new hello_comp423 --bin --vcs none 
+cd hello-comp423
+```
+
+!!! info ""
+    The `--vsc none` flag does not create a new `git` repository automatically on your behalf. The `--bin` flag means that we are making a binary program.
+
+2) Now, open `src/main.rs`, and modify its contents to be:
+
+``` rust
+fn main() {
+    println!("Hello COMP423");
+}
+```
+
+3) To complile and run the program, you can do one of two things.
+
+* Compile and run in two steps:
+
+``` rust
+cargo build
+./target/debug/hello_comp423
+```
+!!! info "cargo build and gcc"
+    Rust's `cargo build` is similar to C's `gcc` in that they compile the program without running it.
+
+
+* Use `cargo run` to compile and run in one step.
+
+
+## Now that you have set up your dev container and written a "Hello COMP423", you should commit and push your work to GitHub!
