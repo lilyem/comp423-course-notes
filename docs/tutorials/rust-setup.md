@@ -38,7 +38,7 @@ git init
 4) Create a README file:
 
 ``` shell
-echo "# COMP423 Rust tutorial" > README.md
+echo "# COMP423 Rust tutorial. https://lilyem.github.io/comp423-course-notes/tutorials/rust-setup/" > README.md
 git add README.md
 git commit -m "Initial commit with README"
 ```
@@ -119,17 +119,17 @@ Step 3. Open a new terminal tab in VSCode and try running `rustc --version` to s
 
 ## Part 3. Creating a new Rust Project
 
-[Rust](https://www.rust-lang.org/learn) is the programming language we have installed through the dev container we just set up, and what language we will be writing our "Hello COMP43" in. In Rust, a *crate* is an executable program. Rather than simply complining our crates usinf the Rust compiler, `rustc`, we will be using [Cargo](https://doc.rust-lang.org/cargo/guide/creating-a-new-project.html) in this tutprial. Cargo is the package manager for Rust and does the following:
+[Rust](https://www.rust-lang.org/learn) is the programming language we have installed through the dev container we just set up, and what language we will be writing our "Hello COMP423" in. In Rust, a *crate* is an executable program. Rather than simply compiling our crates using the Rust compiler, `rustc`, we will be using [Cargo](https://doc.rust-lang.org/cargo/guide/creating-a-new-project.html) in this tutorial. Cargo is the package manager for Rust and does the following:
 
 * Runs `rustc`
 
 * Creates two metadata files
 
-* Builds and fetches your package's depentencies
+* Builds and fetches your package's dependencies
 
-* Simplifies workong with Rust packes via normalizing commands
+* Simplifies working with Rust packes via normalizing commands
 
-1) Use the `cargo new` command to start a new package with Cargo, and specify that we want to create a binary project. This will automatically make a new git repo which we do not want to do here, so use the `--vsc none` flag. Open the terminal in your VSCode dev container you just set up and run the following:
+1) Use the `cargo new` command to start a new package with Cargo, and specify that we want to create a binary project. This will automatically make a new git repo which we do not want to do here, so use the `--vsc none` flag. Open the terminal in your VS Code dev container you just set up and run the following:
 ``` shell
 cargo new hello_comp423 --bin --vcs none 
 cd hello_comp423
